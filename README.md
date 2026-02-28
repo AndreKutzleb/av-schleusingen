@@ -15,9 +15,7 @@ Website des 1. Anglerverein Schleusingen e.V. — einem Angelverein in Schleusin
 | `fotogallerie.html` | Fotogalerie |
 | `gewaesser.html` | Vereinsgewässer |
 | `kontakt.html` | Kontaktinformationen |
-| `links.html` | Nützliche Links |
 | `mitglied.html` | Mitglied werden |
-| `satzung.html` | Vereinssatzung |
 | `termine.html` | Termine und Veranstaltungen |
 | `impressum.html` | Impressum |
 
