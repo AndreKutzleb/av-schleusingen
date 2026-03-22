@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <div class="site-wrapper">
+    {% include header.html %}
+    <div class="site-body">
+      <aside class="site-sidebar">
+        <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">Navigation</button>
+        {% include nav.html %}
+        {% if page.show_calendar %}
+        <div class="sidebar-calendar">
+          {% include calendar.html %}
+        </div>
+        {% endif %}
+      </aside>
+      <main class="site-content">
+        {{ content }}
+      </main>
+    </div>
+    {% include footer.html %}
+  </div>
+</body>
+</html>

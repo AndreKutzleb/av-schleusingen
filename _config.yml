@@ -1,0 +1,12 @@
+title: "1. Anglerverein Schleusingen e.V."
+description: "Angeln in Schleusingen, Thueringen"
+url: "https://1av-schleusingen.de"
+baseurl: ""
+encoding: "utf-8"
+lang: "de"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .context

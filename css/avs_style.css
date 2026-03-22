@@ -1,87 +1,618 @@
-.fehler_form {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #990000;
-	text-decoration: none;
+/* ============================================================
+   AV Schleusingen — Forest Lodge Theme
+   ============================================================ */
+
+/* --- Design Tokens --- */
+:root {
+  /* Warmer blues shifted toward forest green */
+  --color-navy: #1a2332;
+  --color-deep-blue: #1e3a4f;
+  --color-teal: #2a5a4a;
+  --color-ocean: #3a6b5e;
+  --color-sky: #5a9a82;
+  --color-ice: #a8c5b0;
+  --color-mist: #e8ebe4;
+  --color-foam: #f5f3ef;
+  --color-white: #ffffff;
+
+  /* Warm accents */
+  --color-amber: #c8903a;
+  --color-amber-light: #e8c46a;
+  --color-bark: #6b5340;
+
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: "Lora", Georgia, "Times New Roman", serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+
+  --max-width: 960px;
+  --sidebar-width: 220px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --radius: 6px;
 }
-.eingabe_form {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000033;
-	border: 1px solid #000033;
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-.button {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #FFFFFF;
-	border: 1px solid #000033;
-	background-color: #2F5E6E;
-	cursor: Hand;
+
+body {
+  margin: 0;
+  font-family: var(--font-stack);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-navy);
+  background: #ddd9d2;
 }
-.font_12pt {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000033;
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
 }
-.font_12pt_bold {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #000033;
-	text-decoration: none;
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
 }
-.font_11pt_bold {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: #000033;
-	text-decoration: none;
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 var(--spacing-md);
+  color: var(--color-navy);
 }
-.font_11pt {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #000033;
+
+h2 {
+  font-size: 1.25rem;
+  margin: var(--spacing-lg) 0 var(--spacing-sm);
+  color: var(--color-navy);
 }
-.ra_darkblue {
-	border: 1px solid #000033;
+
+h3 {
+  font-size: 1.1rem;
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  color: var(--color-navy);
 }
-a:link {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #000033;
-	text-decoration: none;
+
+p {
+  margin: 0 0 var(--spacing-md);
 }
+
+a {
+  color: var(--color-ocean);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
 a:hover {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #003366;
-	text-decoration: underline;
+  color: var(--color-amber);
+  text-decoration: underline;
 }
+
 a:visited {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #003366;
-	text-decoration: none;
+  color: var(--color-teal);
 }
-a:active {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #003366;
-	text-decoration: none;
+
+/* --- Site Layout --- */
+.site-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--color-foam);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
-.font_11pt_bold_weiss {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: #FFFFFF;
-	text-decoration: none;
+
+.site-body {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  flex: 1;
 }
-.font_9pt {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 9px;
-	color: #568796;
+
+/* --- Header --- */
+.site-header {
+  background:
+    linear-gradient(to bottom, rgba(26, 35, 50, 0.5), rgba(42, 90, 74, 0.65)),
+    url('../images_gewaesser/sportplatzteich_bugl_pr.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  position: relative;
+  min-height: 120px;
 }
-.hg_pic_box {
-	background-image: url(images/main_07.html);
-	background-repeat: repeat-y;
+
+.site-header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: var(--color-foam);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.site-logo {
+  max-height: 70px;
+  width: auto;
+}
+
+.site-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--color-white);
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.site-tagline {
+  font-family: var(--font-heading);
+  margin: var(--spacing-xs) 0 0;
+  color: var(--color-amber-light);
+  font-size: 1rem;
+  font-style: italic;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Navigation --- */
+.site-nav {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.65rem var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  transition: background 0.2s, padding-left 0.2s, border-color 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  padding-left: calc(var(--spacing-lg) + 4px);
+  border-left-color: var(--color-amber);
+  text-decoration: none !important;
+}
+
+.nav-link.active {
+  background: rgba(0, 0, 0, 0.15);
+  border-left-color: var(--color-amber-light);
+  font-weight: 600;
+  color: var(--color-white) !important;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: var(--color-teal);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem var(--spacing-lg);
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-toggle::after {
+  content: " \25BE";
+}
+
+/* --- Sidebar --- */
+.site-sidebar {
+  background: linear-gradient(180deg, var(--color-teal) 0%, #1e4a3a 100%);
+}
+
+/* --- Sidebar Calendar --- */
+.sidebar-calendar {
+  padding: var(--spacing-md);
+}
+
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  color: var(--color-white);
+  table-layout: fixed;
+}
+
+.calendar th,
+.calendar td {
+  text-align: center;
+  padding: 3px;
+}
+
+.calendar-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-amber-light);
+  padding-bottom: var(--spacing-sm);
+}
+
+.calendar-weekday {
+  color: var(--color-white);
+}
+
+.calendar-weekend {
+  color: var(--color-ice);
+}
+
+.calendar-highlight {
+  background: var(--color-amber);
+  color: var(--color-white);
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+/* --- Main Content --- */
+.site-content {
+  padding: var(--spacing-xl) var(--spacing-xl);
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--color-navy);
+  color: var(--color-ice);
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  font-size: 0.85rem;
+  border-top: 3px solid var(--color-amber);
+}
+
+.site-footer p {
+  margin: var(--spacing-xs) 0;
+}
+
+/* --- Page Title --- */
+.page-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-teal);
+  margin: 0 0 var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-amber);
+}
+
+/* --- Section Header (accent bar) --- */
+.section-header {
+  background: transparent;
+  color: var(--color-navy);
+  padding: 0.5rem 0 0.5rem var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  border-radius: 0;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-left: 4px solid var(--color-amber);
+  border-bottom: 1px solid var(--color-ice);
+}
+
+/* --- Image Row (flexbox) --- */
+.image-row {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  flex-wrap: wrap;
+}
+
+.image-row figure {
+  flex: 1;
+  min-width: 140px;
+  margin: 0;
+  text-align: center;
+}
+
+.image-row img {
+  border-radius: var(--radius);
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.image-row img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.image-row figcaption {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: var(--spacing-xs);
+  color: var(--color-bark);
+}
+
+/* --- Data Table --- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-mist);
+}
+
+.data-table th {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-teal);
+  border-bottom: 2px solid var(--color-amber);
+}
+
+.data-table tr:hover {
+  background: var(--color-mist);
+}
+
+/* --- Divider --- */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-ice);
+  margin: var(--spacing-lg) 0;
+}
+
+/* --- Download Card --- */
+.download-card {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  background: var(--color-foam);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-amber);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  margin: var(--spacing-md) 0;
+}
+
+.download-card img {
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+/* --- Back to Top --- */
+.back-to-top {
+  display: inline-block;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--color-ocean);
+  margin-top: var(--spacing-lg);
+}
+
+.back-to-top:hover {
+  color: var(--color-amber);
+}
+
+/* --- Gallery Viewer --- */
+.gallery-viewer {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.gallery-btn {
+  background: var(--color-ocean);
+  color: var(--color-white);
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  font-family: var(--font-stack);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.gallery-btn:hover {
+  background: var(--color-amber);
+}
+
+.gallery-viewer img {
+  border-radius: var(--radius);
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-close {
+  margin-top: var(--spacing-md);
+  font-size: 0.85rem;
+}
+
+/* --- Gallery Page (standalone layout) --- */
+.gallery-page {
+  background: var(--color-mist);
+  margin: 0;
+  padding: var(--spacing-lg);
+}
+
+/* --- Muted text --- */
+.text-muted {
+  font-size: 0.8rem;
+  color: var(--color-bark);
+  text-align: right;
+  font-style: italic;
+}
+
+/* --- Contact Form legacy --- */
+.fehler_form {
+  font-size: 0.9rem;
+  color: #990000;
+}
+
+.eingabe_form {
+  font-family: var(--font-stack);
+  font-size: 0.9rem;
+  color: var(--color-navy);
+  border: 1px solid var(--color-ice);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.6rem;
+}
+
+.button {
+  font-family: var(--font-stack);
+  font-size: 0.9rem;
+  color: var(--color-white);
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  background: var(--color-ocean);
+  border-radius: var(--radius);
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.button:hover {
+  background: var(--color-amber);
+}
+
+/* --- Legacy class fallbacks (safety net) --- */
+.font_11pt { font-size: 0.9rem; color: var(--color-navy); }
+.font_11pt_bold { font-size: 0.9rem; font-weight: 600; color: var(--color-navy); }
+.font_11pt_bold_weiss { font-size: 0.9rem; font-weight: 600; color: var(--color-white); }
+.font_12pt { font-size: 1rem; color: var(--color-navy); }
+.font_12pt_bold { font-size: 1rem; font-weight: 600; color: var(--color-navy); }
+.font_9pt { font-size: 0.8rem; color: var(--color-bark); }
+.ra_darkblue { border: 1px solid var(--color-ice); border-radius: var(--radius); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: single column */
+@media (max-width: 960px) {
+  .site-body {
+    grid-template-columns: 1fr;
+  }
+
+  .site-sidebar {
+    order: -1;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--spacing-sm);
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    border-left: none;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+  }
+
+  .nav-link:hover {
+    padding-left: 0.75rem;
+    border-left: none;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .nav-link.active {
+    border-left: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid var(--color-amber);
+  }
+
+  .sidebar-calendar {
+    display: none;
+  }
+
+  .site-header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .site-header {
+    background:
+      linear-gradient(to bottom, rgba(26, 35, 50, 0.65), rgba(42, 90, 74, 0.8)),
+      url('../images_gewaesser/sportplatzteich_bugl_pr.jpg') center/cover no-repeat;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .site-title {
+    font-size: 1.1rem;
+  }
+
+  .site-tagline {
+    font-size: 0.85rem;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    padding: 0;
+    display: none;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-link {
+    padding: 0.65rem var(--spacing-lg);
+    border-radius: 0;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+  }
+
+  .site-content {
+    padding: var(--spacing-md);
+  }
+
+  .image-row {
+    flex-direction: column;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+  }
+
+  .download-card {
+    flex-direction: column;
+  }
 }
