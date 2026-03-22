@@ -1,87 +1,378 @@
+/* === Base Reset === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: url(../images/bg_blue.jpg);
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #000033;
+}
+
+img {
+  border: 0;
+}
+
+/* === Site Layout === */
+.site-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header / Footer image strips */
+.site-header,
+.site-footer {
+  overflow: hidden;
+}
+
+.header-row,
+.footer-row {
+  display: flex;
+  width: 900px;
+}
+
+.header-row img,
+.footer-row img {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Main body grid */
+.site-body {
+  display: grid;
+  grid-template-columns: 35px 173px 1fr 72px;
+  min-height: 300px;
+}
+
+.site-border-left {
+  background: url(../images/main_01.jpg) repeat-y;
+}
+
+.site-sidebar {
+  background: url(../images/main_07.jpg) repeat-y;
+}
+
+.site-content {
+  background: url(../images/hg_main.jpg) repeat-y;
+  padding: 15px 35px;
+}
+
+.site-border-right {
+  background: url(../images/main_05.jpg) repeat-y;
+}
+
+/* === Navigation === */
+.site-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-btn {
+  display: block;
+  line-height: 0;
+}
+
+.nav-btn img {
+  display: block;
+}
+
+.nav-btn img.hover {
+  display: none;
+}
+
+.nav-btn:hover img {
+  display: none;
+}
+
+.nav-btn:hover img.hover {
+  display: block;
+}
+
+/* === Sidebar Calendar === */
+.sidebar-calendar {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.calendar {
+  font-size: 8pt;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+}
+
+.calendar th {
+  text-align: center;
+}
+
+.calendar-title {
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #9EC5D2;
+}
+
+.calendar-weekday {
+  color: #000033;
+}
+
+.calendar-weekend {
+  color: #9EC5D2;
+}
+
+.calendar-highlight {
+  background: #000033;
+  color: #ffffff;
+}
+
+/* === Content Tables === */
+.content-table {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.content-table td {
+  padding: 5px;
+}
+
+/* === Content Images === */
+.site-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Existing Classes (preserved) === */
 .fehler_form {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #990000;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #990000;
+  text-decoration: none;
 }
+
 .eingabe_form {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000033;
-	border: 1px solid #000033;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000033;
+  border: 1px solid #000033;
 }
+
 .button {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #FFFFFF;
-	border: 1px solid #000033;
-	background-color: #2F5E6E;
-	cursor: Hand;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #FFFFFF;
+  border: 1px solid #000033;
+  background-color: #2F5E6E;
+  cursor: pointer;
 }
+
 .font_12pt {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000033;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000033;
 }
+
 .font_12pt_bold {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #000033;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000033;
+  text-decoration: none;
 }
+
 .font_11pt_bold {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: #000033;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000033;
+  text-decoration: none;
 }
+
 .font_11pt {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #000033;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #000033;
 }
+
 .ra_darkblue {
-	border: 1px solid #000033;
+  border: 1px solid #000033;
 }
+
 a:link {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #000033;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #000033;
+  text-decoration: none;
 }
+
 a:hover {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #003366;
-	text-decoration: underline;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #003366;
+  text-decoration: underline;
 }
+
 a:visited {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #003366;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #003366;
+  text-decoration: none;
 }
+
 a:active {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #003366;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #003366;
+  text-decoration: none;
 }
+
 .font_11pt_bold_weiss {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: #FFFFFF;
-	text-decoration: none;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
 }
+
 .font_9pt {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 9px;
-	color: #568796;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  color: #568796;
 }
-.hg_pic_box {
-	background-image: url(images/main_07.html);
-	background-repeat: repeat-y;
+
+/* === Gallery Page === */
+.gallery-page {
+  margin: 0;
+}
+
+.gallery-page table {
+  max-width: 100%;
+}
+
+.gallery-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Mobile Header (shown on small screens) === */
+.mobile-header {
+  display: none;
+  background: #174F5C;
+  color: white;
+  padding: 12px 16px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* === Responsive: Tablet === */
+@media (max-width: 899px) {
+  .site-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .header-row,
+  .footer-row {
+    width: 100%;
+  }
+
+  .header-row img,
+  .footer-row img {
+    flex-shrink: 1;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .site-body {
+    grid-template-columns: 1fr;
+  }
+
+  .site-border-left,
+  .site-border-right {
+    display: none;
+  }
+
+  .site-sidebar {
+    background: #174F5C;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .nav-btn {
+    margin: 2px;
+  }
+
+  .sidebar-calendar {
+    display: none;
+  }
+
+  .site-content {
+    padding: 15px;
+  }
+}
+
+/* === Responsive: Mobile === */
+@media (max-width: 599px) {
+  .site-header,
+  .site-footer {
+    display: none;
+  }
+
+  .mobile-header {
+    display: block;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-btn {
+    margin: 0;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-btn img,
+  .nav-btn img.hover {
+    display: none !important;
+  }
+
+  .nav-btn::after {
+    display: block;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: normal;
+  }
+
+  a.nav-btn:link,
+  a.nav-btn:visited {
+    color: #ffffff;
+    font-size: 13px;
+  }
+
+  .nav-btn:nth-child(1)::after { content: "Startseite"; }
+  .nav-btn:nth-child(2)::after { content: "Gew\00E4sser"; }
+  .nav-btn:nth-child(3)::after { content: "Fotogallerie"; }
+  .nav-btn:nth-child(4)::after { content: "Angelkarten"; }
+  .nav-btn:nth-child(5)::after { content: "Mitglied werden"; }
+  .nav-btn:nth-child(6)::after { content: "Termine"; }
+  .nav-btn:nth-child(7)::after { content: "Kontakt"; }
+  .nav-btn:nth-child(8)::after { content: "Impressum"; }
+
+  .site-content {
+    padding: 10px;
+    background-image: none;
+    background-color: #d5e8ee;
+  }
 }
