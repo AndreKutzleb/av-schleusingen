@@ -1,34 +1,10 @@
-<nav class="site-nav">
-  <a href="{{ '/index.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_startseite.jpg' | relative_url }}" alt="Startseite" width="173" height="38">
-    <img src="{{ '/images/bu_startseite_ov.jpg' | relative_url }}" alt="" width="173" height="38" class="hover">
-  </a>
-  <a href="{{ '/gewaesser.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_gewaesser.jpg' | relative_url }}" alt="Gew&auml;sser" width="173" height="40">
-    <img src="{{ '/images/bu_gewaesser_ov.jpg' | relative_url }}" alt="" width="173" height="40" class="hover">
-  </a>
-  <a href="{{ '/fotogallerie.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_fotogallerie.jpg' | relative_url }}" alt="Fotogallerie" width="173" height="40">
-    <img src="{{ '/images/bu_fotogallerie_ov.jpg' | relative_url }}" alt="" width="173" height="40" class="hover">
-  </a>
-  <a href="{{ '/angelkarten.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_angelkarten.jpg' | relative_url }}" alt="Angelkarten" width="173" height="40">
-    <img src="{{ '/images/bu_angelkarten_ov.jpg' | relative_url }}" alt="" width="173" height="40" class="hover">
-  </a>
-  <a href="{{ '/mitglied.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_mitglied.jpg' | relative_url }}" alt="Mitglied werden" width="173" height="40">
-    <img src="{{ '/images/bu_mitglied_ov.jpg' | relative_url }}" alt="" width="173" height="40" class="hover">
-  </a>
-  <a href="{{ '/termine.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_termine.jpg' | relative_url }}" alt="Termine" width="173" height="40">
-    <img src="{{ '/images/bu_termine_ov.jpg' | relative_url }}" alt="" width="173" height="40" class="hover">
-  </a>
-  <a href="{{ '/kontakt.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_kontakt.jpg' | relative_url }}" alt="Kontakt" width="173" height="40">
-    <img src="{{ '/images/bu_kontakt_ov.jpg' | relative_url }}" alt="" width="173" height="40" class="hover">
-  </a>
-  <a href="{{ '/impressum.html' | relative_url }}" class="nav-btn">
-    <img src="{{ '/images/bu_impressum.jpg' | relative_url }}" alt="Impressum" width="173" height="41">
-    <img src="{{ '/images/bu_impressum_ov.jpg' | relative_url }}" alt="" width="173" height="41" class="hover">
-  </a>
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <a href="{{ '/index.html' | relative_url }}" class="nav-link {% if page.url == '/index.html' or page.url == '/' %}active{% endif %}">Startseite</a>
+  <a href="{{ '/gewaesser.html' | relative_url }}" class="nav-link {% if page.url == '/gewaesser.html' %}active{% endif %}">Gew&auml;sser</a>
+  <a href="{{ '/fotogallerie.html' | relative_url }}" class="nav-link {% if page.url == '/fotogallerie.html' %}active{% endif %}">Fotogallerie</a>
+  <a href="{{ '/angelkarten.html' | relative_url }}" class="nav-link {% if page.url == '/angelkarten.html' %}active{% endif %}">Angelkarten</a>
+  <a href="{{ '/mitglied.html' | relative_url }}" class="nav-link {% if page.url == '/mitglied.html' %}active{% endif %}">Mitglied werden</a>
+  <a href="{{ '/termine.html' | relative_url }}" class="nav-link {% if page.url == '/termine.html' %}active{% endif %}">Termine</a>
+  <a href="{{ '/kontakt.html' | relative_url }}" class="nav-link {% if page.url == '/kontakt.html' %}active{% endif %}">Kontakt</a>
+  <a href="{{ '/impressum.html' | relative_url }}" class="nav-link {% if page.url == '/impressum.html' %}active{% endif %}">Impressum</a>
 </nav>

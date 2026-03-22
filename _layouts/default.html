@@ -5,11 +5,10 @@
 </head>
 <body>
   <div class="site-wrapper">
-    <div class="mobile-header">1. Anglerverein Schleusingen e.V.</div>
     {% include header.html %}
     <div class="site-body">
-      <div class="site-border-left"></div>
       <aside class="site-sidebar">
+        <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">Navigation</button>
         {% include nav.html %}
         {% if page.show_calendar %}
         <div class="sidebar-calendar">
@@ -20,7 +19,6 @@
       <main class="site-content">
         {{ content }}
       </main>
-      <div class="site-border-right"></div>
     </div>
     {% include footer.html %}
   </div>

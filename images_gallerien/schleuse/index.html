@@ -2,9 +2,6 @@
 layout: gallery
 title: "Schleuse - Fotogallerie"
 ---
-<style>
-  body { background-image: url(images/hg_main.jpg); }
-</style>
 <script>
 var bilder = [
   "images/01.jpg",
@@ -17,23 +14,13 @@ var bilder = [
   "images/08.jpg"
 ];
 </script>
-<table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="35" valign="top"> <div align="center">
-        <p><img src="images/navi_photo.gif" width="251" height="30" border="0" usemap="#navi">
-          <map name="navi">
-            <area shape="rect" coords="8,6,57,24" href="#" onclick="diarueck();return false" alt="Zur&uuml;ck">
-            <area shape="rect" coords="126,5,152,23" href="#" onclick="inter = setInterval('diavor()',zeit);return false" alt="Play">
-            <area shape="rect" coords="98,5,125,24" href="#" onclick="clearInterval(inter);return false" alt="Stop">
-            <area shape="rect" coords="194,5,242,23" href="#" onclick="diavor();return false" alt="Vorw&auml;rts">
-          </map>
-        </p>
-      </div></td>
-  </tr>
-  <tr>
-    <td height="318" valign="top">
-	  <img src="images/01.jpg" name="dia" width="500" height="375" class="ra_darkblue"></td>
-  </tr>
-</table>
-<p align="center"><span class="font_9pt"><a href="javascript:window.close();">Fenster
-  schlie&szlig;en!</a></span></p>
+<div class="gallery-viewer">
+  <div class="gallery-controls">
+    <button class="gallery-btn" onclick="diarueck();return false">&#9664; Zur&uuml;ck</button>
+    <button class="gallery-btn" onclick="clearInterval(inter);return false">&#9632; Stop</button>
+    <button class="gallery-btn" onclick="inter = setInterval('diavor()',zeit);return false">&#9654; Play</button>
+    <button class="gallery-btn" onclick="diavor();return false">Vorw&auml;rts &#9654;</button>
+  </div>
+  <img src="images/01.jpg" name="dia" width="500" height="375" alt="Schleuse Galerie">
+  <p class="gallery-close"><a href="javascript:window.close();">Fenster schlie&szlig;en!</a></p>
+</div>
