@@ -310,6 +310,10 @@ a:visited {
 }
 
 /* --- Image Row (flexbox) --- */
+.water-entry {
+  margin-bottom: var(--spacing-xl);
+}
+
 .image-row {
   display: flex;
   gap: var(--spacing-md);
@@ -325,6 +329,7 @@ a:visited {
 }
 
 .image-row img {
+  display: block;
   border-radius: var(--radius);
   width: 100%;
   height: auto;
@@ -332,9 +337,19 @@ a:visited {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.image-row img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+.still-water-image {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--spacing-lg);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .image-row img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
 }
 
 .image-row figcaption {
@@ -606,6 +621,20 @@ a:visited {
 
   .image-row {
     flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .image-row figure {
+    flex: none;
+    width: 100%;
+  }
+
+  .image-row img {
+    transform: none;
+  }
+
+  .water-entry {
+    margin-bottom: var(--spacing-lg);
   }
 
   .page-title {
