@@ -552,6 +552,48 @@ a:visited {
   margin-top: var(--spacing-md);
 }
 
+.rental-prices {
+  margin-bottom: var(--spacing-xl);
+}
+
+.rental-price-grid {
+  margin-top: var(--spacing-lg);
+}
+
+.rental-price-card {
+  text-align: center;
+}
+
+.rental-price-label,
+.rental-price-value,
+.rental-price-detail {
+  margin: 0;
+}
+
+.rental-price-label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-teal);
+}
+
+.rental-price-value {
+  margin-top: var(--spacing-sm);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--color-navy);
+}
+
+.rental-price-detail {
+  margin-top: var(--spacing-xs);
+  color: var(--color-bark);
+  font-weight: 600;
+}
+
+.rental-note h3 {
+  margin-top: 0;
+}
+
 /* --- Contact Form legacy --- */
 .fehler_form {
   font-size: 0.9rem;
