@@ -110,17 +110,17 @@ a:visited {
 
 .site-body {
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-columns: 1fr;
   flex: 1;
 }
 
 /* --- Header --- */
 .site-header {
   background:
-    linear-gradient(to bottom, rgba(26, 35, 50, 0.5), rgba(42, 90, 74, 0.65)),
+    linear-gradient(to bottom, rgba(26, 35, 50, 0.65), rgba(42, 90, 74, 0.8)),
     url('../images_gewaesser/sportplatzteich_bugl_pr.jpg') center/cover no-repeat;
   color: var(--color-white);
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-md);
   position: relative;
   min-height: 120px;
 }
@@ -141,7 +141,9 @@ a:visited {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: var(--spacing-lg);
 }
 
@@ -152,7 +154,7 @@ a:visited {
 
 .site-title {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   margin: 0;
   color: var(--color-white);
   font-weight: 700;
@@ -163,17 +165,21 @@ a:visited {
   font-family: var(--font-heading);
   margin: var(--spacing-xs) 0 0;
   color: var(--color-amber-light);
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-style: italic;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Navigation --- */
 .site-nav {
-  display: flex;
+  display: none;
   flex-direction: column;
   background: transparent;
-  padding: var(--spacing-sm) 0;
+  padding: 0;
+}
+
+.site-nav.open {
+  display: flex;
 }
 
 .nav-link {
@@ -181,16 +187,18 @@ a:visited {
   padding: 0.65rem var(--spacing-lg);
   color: rgba(255, 255, 255, 0.9) !important;
   font-family: var(--font-heading);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   letter-spacing: 0.02em;
   text-decoration: none !important;
   transition: background 0.2s, padding-left 0.2s, border-color 0.2s;
   border-left: 3px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
 }
 
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.08);
-  padding-left: calc(var(--spacing-lg) + 4px);
+  padding-left: var(--spacing-lg);
   border-left-color: var(--color-amber);
   text-decoration: none !important;
 }
@@ -204,7 +212,7 @@ a:visited {
 
 /* Mobile nav toggle */
 .nav-toggle {
-  display: none;
+  display: block;
   background: var(--color-teal);
   color: var(--color-white);
   border: none;
@@ -223,11 +231,13 @@ a:visited {
 /* --- Sidebar --- */
 .site-sidebar {
   background: linear-gradient(180deg, var(--color-teal) 0%, #1e4a3a 100%);
+  order: -1;
 }
 
 /* --- Sidebar Calendar --- */
 .sidebar-calendar {
   padding: var(--spacing-md);
+  display: none;
 }
 
 .calendar {
@@ -268,7 +278,7 @@ a:visited {
 
 /* --- Main Content --- */
 .site-content {
-  padding: var(--spacing-xl) var(--spacing-xl);
+  padding: var(--spacing-md);
 }
 
 /* --- Footer --- */
@@ -288,7 +298,7 @@ a:visited {
 /* --- Page Title --- */
 .page-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--color-teal);
   margin: 0 0 var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
@@ -310,21 +320,26 @@ a:visited {
 }
 
 /* --- Image Row (flexbox) --- */
+.water-entry {
+  margin-bottom: var(--spacing-lg);
+}
+
 .image-row {
   display: flex;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-sm);
   margin: var(--spacing-md) 0;
-  flex-wrap: wrap;
 }
 
 .image-row figure {
-  flex: 1;
-  min-width: 140px;
+  flex: none;
+  width: 100%;
   margin: 0;
   text-align: center;
 }
 
 .image-row img {
+  display: block;
   border-radius: var(--radius);
   width: 100%;
   height: auto;
@@ -332,9 +347,19 @@ a:visited {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.image-row img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+.still-water-image {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--spacing-lg);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .image-row img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
 }
 
 .image-row figcaption {
@@ -380,6 +405,7 @@ a:visited {
 /* --- Download Card --- */
 .download-card {
   display: flex;
+  flex-direction: column;
   gap: var(--spacing-lg);
   align-items: flex-start;
   padding: var(--spacing-md);
@@ -466,6 +492,108 @@ a:visited {
   font-style: italic;
 }
 
+/* --- Holiday apartment page --- */
+.holiday-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+  margin-bottom: var(--spacing-xl);
+}
+
+.holiday-copy .section-header {
+  margin-top: 0;
+}
+
+.holiday-hero,
+.holiday-gallery-item {
+  margin: 0;
+}
+
+.holiday-hero img,
+.holiday-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.holiday-hero figcaption,
+.holiday-gallery-item figcaption {
+  margin-top: var(--spacing-sm);
+  color: var(--color-bark);
+  font-size: 0.9rem;
+}
+
+.holiday-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0 var(--spacing-xl);
+}
+
+.holiday-feature-card {
+  background: linear-gradient(180deg, rgba(168, 197, 176, 0.18), rgba(245, 243, 239, 0.95));
+  border-left: 4px solid var(--color-amber);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.holiday-feature-card h3 {
+  margin-top: 0;
+}
+
+.holiday-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.rental-prices {
+  margin-bottom: var(--spacing-xl);
+}
+
+.rental-price-grid {
+  margin-top: var(--spacing-lg);
+}
+
+.rental-price-card {
+  text-align: center;
+}
+
+.rental-price-label,
+.rental-price-value,
+.rental-price-detail {
+  margin: 0;
+}
+
+.rental-price-label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-teal);
+}
+
+.rental-price-value {
+  margin-top: var(--spacing-sm);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--color-navy);
+}
+
+.rental-price-detail {
+  margin-top: var(--spacing-xs);
+  color: var(--color-bark);
+  font-weight: 600;
+}
+
+.rental-note h3 {
+  margin-top: 0;
+}
+
 /* --- Contact Form legacy --- */
 .fehler_form {
   font-size: 0.9rem;
@@ -511,27 +639,28 @@ a:visited {
    Responsive
    ============================================================ */
 
-/* Tablet: single column */
-@media (max-width: 960px) {
-  .site-body {
-    grid-template-columns: 1fr;
-  }
-
-  .site-sidebar {
-    order: -1;
-  }
-
+@media (min-width: 601px) {
   .site-nav {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding: var(--spacing-sm);
   }
 
+  .site-nav.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
   .nav-link {
     padding: 0.5rem 0.75rem;
     border-left: none;
     border-radius: var(--radius);
+    border-bottom: none;
     font-size: 0.85rem;
   }
 
@@ -561,58 +690,99 @@ a:visited {
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+@media (min-width: 761px) {
+  .holiday-features,
+  .holiday-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 961px) {
+  .site-body {
+    grid-template-columns: var(--sidebar-width) 1fr;
+  }
+
+  .site-sidebar {
+    order: 0;
+  }
+
   .site-header {
     background:
-      linear-gradient(to bottom, rgba(26, 35, 50, 0.65), rgba(42, 90, 74, 0.8)),
+      linear-gradient(to bottom, rgba(26, 35, 50, 0.5), rgba(42, 90, 74, 0.65)),
       url('../images_gewaesser/sportplatzteich_bugl_pr.jpg') center/cover no-repeat;
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .site-header-inner {
+    flex-direction: row;
+    text-align: left;
   }
 
   .site-title {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 
   .site-tagline {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .site-nav {
     flex-direction: column;
-    padding: 0;
-    display: none;
-  }
-
-  .site-nav.open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
+    padding: var(--spacing-sm) 0;
   }
 
   .nav-link {
     padding: 0.65rem var(--spacing-lg);
-    border-radius: 0;
     border-left: 3px solid transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
+    border-bottom: none;
+    border-radius: 0;
+    font-size: 0.92rem;
+  }
+
+  .nav-link:hover {
+    padding-left: calc(var(--spacing-lg) + 4px);
+    border-left-color: var(--color-amber);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-link.active {
+    border-left-color: var(--color-amber-light);
+    border-bottom: none;
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar-calendar {
+    display: block;
   }
 
   .site-content {
-    padding: var(--spacing-md);
-  }
-
-  .image-row {
-    flex-direction: column;
+    padding: var(--spacing-xl);
   }
 
   .page-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  .water-entry {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .image-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .image-row figure {
+    flex: 1;
+    min-width: 140px;
   }
 
   .download-card {
-    flex-direction: column;
+    flex-direction: row;
+  }
+
+  .holiday-intro {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   }
 }
