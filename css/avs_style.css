@@ -781,8 +781,4 @@ a:visited {
   .download-card {
     flex-direction: row;
   }
-
-  .holiday-intro {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  }
 }
