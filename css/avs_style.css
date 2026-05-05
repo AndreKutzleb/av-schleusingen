@@ -421,6 +421,26 @@ a:visited {
   flex-shrink: 0;
 }
 
+.membership-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-lg) 0;
+}
+
+.membership-actions .button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.membership-actions .button:visited {
+  color: var(--color-white);
+}
+
+.membership-secondary-action {
+  background: var(--color-teal);
+}
+
 /* --- Back to Top --- */
 .back-to-top {
   display: inline-block;
