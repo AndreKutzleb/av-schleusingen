@@ -2,38 +2,21 @@
 layout: default
 title: "1. Anglerverein Schleusingen e. V. - Fotogallerie"
 ---
-<script>
-var win = null;
-function NewWindow(mypage,myname,w,h,scroll){
-  var LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-  var TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-  var settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',resizable';
-  win = window.open(mypage,myname,settings);
-  if(win.window.focus){win.window.focus();}
-}
-</script>
 <a id="top"></a>
 <h1 class="page-title">Fotogallerie</h1>
 
-<h2 class="section-header">Fliessende Gew&auml;sser</h2>
+<h2 class="section-header">Einblicke ins Vereinsleben</h2>
 
-<div class="image-row">
-  <figure>
-    <a href="images_gallerien/schleuse/index.html" onclick="NewWindow(this.href,'name','570','460','yes');return false"><img src="images_gewaesser/schleuse_kl.jpg" alt="Schleuse"></a>
-    <figcaption>Schleuse</figcaption>
+<p>Die bisherigen Galeriebilder wurden durch aktuelle Vereinsfotos ersetzt. Ein Klick auf ein Bild &ouml;ffnet die gr&ouml;&szlig;ere Ansicht in einem neuen Tab.</p>
+
+<div class="club-photo-grid">
+  {% for photo in site.data.club_gallery.images %}
+  <figure class="club-photo-card">
+    <a class="club-photo-link" href="{{ '/images_club/full/' | append: photo | relative_url }}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/images_club/thumbs/' | append: photo | relative_url }}" alt="Vereinsfoto {{ forloop.index }} des 1. Anglerverein Schleusingen" loading="lazy">
+    </a>
   </figure>
-  <figure>
-    <a href="images_gallerien/nahe/index.html" onclick="NewWindow(this.href,'name','570','460','yes');return false"><img src="images_gewaesser/nahe_kl.jpg" alt="Nahe"></a>
-    <figcaption>Nahe</figcaption>
-  </figure>
-  <figure>
-    <a href="images_gallerien/erle/index.html" onclick="NewWindow(this.href,'name','570','460','yes');return false"><img src="images_gewaesser/erle_kl.jpg" alt="Erle"></a>
-    <figcaption>Erle</figcaption>
-  </figure>
+  {% endfor %}
 </div>
-
-<h2 class="section-header">Stehende Gew&auml;sser</h2>
-
-<p>Bilder in K&uuml;rze</p>
 
 <div style="text-align: right;"><a href="#top" class="back-to-top">Nach oben &uarr;</a></div>
