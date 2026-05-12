@@ -21,21 +21,28 @@ Website des 1. Anglerverein Schleusingen e.V. — einem Angelverein in Schleusin
 
 ## Technik
 
-Statische Website (HTML, CSS, JavaScript) — kein Build-Prozess erforderlich.
+Statische Website mit Jekyll-Templates (HTML, CSS, JavaScript). Vor lokalen Vorschauen sollten &Auml;nderungen daher immer zuerst mit Jekyll nach `_site/` gebaut werden.
 
 ## Lokal starten
 
-Die HTML-Dateien können direkt im Browser geöffnet werden, oder über einen lokalen Webserver:
+F&uuml;r eine korrekte Vorschau nach jeder &Auml;nderung immer den Jekyll-Build ausf&uuml;hren und anschlie&szlig;end das gerenderte Verzeichnis `_site/` per Python-Server bereitstellen:
 
 ```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js
-npx http-server
+bundle install
+bundle exec jekyll build
+cd _site
+python3 -m http.server 8000
 ```
 
-Dann im Browser [http://localhost:8000](http://localhost:8000) aufrufen.
+Dann im Browser [http://127.0.0.1:8000](http://127.0.0.1:8000) aufrufen.
+
+## Hinweise f&uuml;r KI-Agenten
+
+Wenn ein KI-Agent in diesem Repository &Auml;nderungen vornimmt, soll nach jeder inhaltlichen oder visuellen &Auml;nderung dieser Ablauf befolgt werden:
+
+1. `bundle exec jekyll build`
+2. `_site/` &uuml;ber `python3 -m http.server 8000` bereitstellen
+3. Die Vorschau immer gegen die gebaute Version unter `http://127.0.0.1:8000` pr&uuml;fen, nicht gegen die Rohdateien im Projektwurzelverzeichnis
 
 ## Deployment
 
