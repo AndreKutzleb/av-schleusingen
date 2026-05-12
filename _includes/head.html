@@ -10,7 +10,7 @@
 <meta name="abstract" content="Angeln in Schleusingen">
 <meta name="page-topic" content="Umwelt">
 <meta name="page-type" content="Private Homepage">
-<meta name="robots" content="INDEX,FOLLOW">
+<meta name="robots" content="{% if page.noindex %}NOINDEX,NOFOLLOW{% else %}INDEX,FOLLOW{% endif %}">
 <meta name="language" content="DE">
 <meta name="audience" content="Alle">
 <title>{{ page.title | default: "1. Anglerverein Schleusingen e. V.  + + +  Angeln in Schleusingen / Th&uuml;ringen" }}</title>
