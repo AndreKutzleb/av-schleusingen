@@ -147,9 +147,27 @@ a:visited {
   gap: var(--spacing-lg);
 }
 
+.site-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 0;
+}
+
+.site-logo-link:hover {
+  text-decoration: none;
+}
+
 .site-logo {
-  max-height: 70px;
-  width: auto;
+  display: block;
+  width: min(180px, 42vw);
+  max-width: 100%;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+}
+
+.site-header-copy {
+  max-width: 30rem;
 }
 
 .site-title {
@@ -785,6 +803,10 @@ a:visited {
     text-align: center;
   }
 
+  .site-logo {
+    width: min(200px, 34vw);
+  }
+
   .site-title {
     font-size: 1.3rem;
   }
@@ -816,6 +838,11 @@ a:visited {
   .site-header-inner {
     flex-direction: row;
     text-align: left;
+    align-items: center;
+  }
+
+  .site-logo {
+    width: 170px;
   }
 
   .site-title {
