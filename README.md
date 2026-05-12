@@ -43,6 +43,7 @@ Wenn ein KI-Agent in diesem Repository &Auml;nderungen vornimmt, soll nach jeder
 1. `bundle exec jekyll build`
 2. `_site/` &uuml;ber `python3 -m http.server 8000` bereitstellen
 3. Die Vorschau immer gegen die gebaute Version unter `http://127.0.0.1:8000` pr&uuml;fen, nicht gegen die Rohdateien im Projektwurzelverzeichnis
+4. Wenn eine &Auml;nderung auch im &Auml;nderungsprotokoll dokumentiert werden soll, die bestehende Website-Seite `changelog.html` aktualisieren statt eine neue `CHANGELOG.md` oder andere separate Markdown-Chronik anzulegen
 
 ## Deployment
 
