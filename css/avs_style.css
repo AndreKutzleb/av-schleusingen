@@ -801,6 +801,11 @@ a:visited {
   .site-header-inner {
     flex-direction: column;
     text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .site-header-copy {
+    margin-top: -0.9rem;
   }
 
   .site-logo {
@@ -839,10 +844,11 @@ a:visited {
     flex-direction: row;
     text-align: left;
     align-items: center;
+    gap: var(--spacing-xl);
   }
 
   .site-logo {
-    width: 170px;
+    width: clamp(220px, 18vw, 280px);
   }
 
   .site-title {
