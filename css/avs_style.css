@@ -606,6 +606,95 @@ a:visited {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
+.partner-spotlight {
+  margin: 0 0 var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background:
+    linear-gradient(135deg, rgba(26, 35, 50, 0.95), rgba(42, 90, 74, 0.9)),
+    linear-gradient(180deg, rgba(200, 144, 58, 0.18), rgba(245, 243, 239, 0.05));
+  color: var(--color-white);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(26, 35, 50, 0.18);
+}
+
+.partner-spotlight a {
+  color: var(--color-amber-light);
+}
+
+.partner-spotlight a:visited {
+  color: var(--color-amber-light);
+}
+
+.partner-kicker {
+  margin: 0 0 var(--spacing-xs);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ice);
+}
+
+.partner-spotlight-title {
+  margin-top: 0;
+  color: var(--color-white);
+}
+
+.partner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.partner-actions .button {
+  text-decoration: none;
+}
+
+.partner-actions .button:visited {
+  color: var(--color-white);
+}
+
+.partner-hero {
+  margin: 0 0 var(--spacing-xl);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background:
+    linear-gradient(135deg, rgba(26, 35, 50, 0.92), rgba(42, 90, 74, 0.82)),
+    url('../images_gewaesser/erle_kl_2.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.partner-hero h2,
+.partner-hero p {
+  color: var(--color-white);
+}
+
+.partner-hero .section-header {
+  color: var(--color-white);
+  border-left-color: var(--color-amber-light);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-xl);
+}
+
+.partner-link-list {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.partner-link-list li + li {
+  margin-top: var(--spacing-sm);
+}
+
+.partner-link-list a {
+  font-weight: 600;
+}
+
 .club-photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -858,6 +947,11 @@ a:visited {
   .site-header-inner {
     flex-direction: column;
     text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .site-header-copy {
+    margin-top: -0.9rem;
   }
 
   .site-logo {
@@ -872,6 +966,10 @@ a:visited {
 @media (min-width: 761px) {
   .holiday-features,
   .holiday-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .partner-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -896,10 +994,11 @@ a:visited {
     flex-direction: row;
     text-align: left;
     align-items: center;
+    gap: var(--spacing-xl);
   }
 
   .site-logo {
-    width: 170px;
+    width: clamp(220px, 18vw, 280px);
   }
 
   .site-title {
