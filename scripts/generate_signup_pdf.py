@@ -115,14 +115,14 @@ def generate() -> Path:
     c.drawString(
         MARGIN_X,
         intro_y - 13,
-        "Rueckfragen koennen wir telefonisch oder per E-Mail schneller klaeren als per Post.",
+        "Rueckfragen klaeren wir am schnellsten telefonisch.",
     )
 
     gutter = 10
     col_w = (CONTENT_W - gutter) / 2
 
     person_top = TOP - 118
-    person_h = 220
+    person_h = 186
     section_box(c, MARGIN_X, person_top, CONTENT_W, person_h, "Persoenliche Angaben")
 
     left_x = MARGIN_X + 12
@@ -158,10 +158,6 @@ def generate() -> Path:
             draw_hint(c, right_x + 92, y, hint)
         add_text_field(c, field_name, right_x, y - 18, field_w)
 
-    email_y = first_row_y - (4 * row_gap)
-    draw_label(c, left_x, email_y, "E-Mail")
-    add_text_field(c, "email", left_x, email_y - 18, CONTENT_W - 24)
-
     license_top = person_top - person_h - 14
     license_h = 100
     section_box(c, MARGIN_X, license_top, CONTENT_W, license_h, "Angaben zum Fischereischein")
@@ -171,7 +167,7 @@ def generate() -> Path:
         ("schein_nr", "Fischereischein-Nr.", MARGIN_X + 12, 118),
         ("ausstellung", "Ausstellungsdatum", MARGIN_X + 140, 98),
         ("gueltig_bis", "Gueltig bis", MARGIN_X + 248, 86),
-        ("ausstellungsort", "Ausstellungsort", MARGIN_X + 344, 161),
+        ("ausstellungsort", "Ausstellungsort", MARGIN_X + 344, 142),
     ]
     for field_name, label, x, width in fields:
         draw_label(c, x, l_y, label)
@@ -208,7 +204,7 @@ def generate() -> Path:
     sig_fields = [
         ("ort", "Ort", MARGIN_X + 12, 150),
         ("datum", "Datum", MARGIN_X + 174, 90),
-        ("unterschrift", "Unterschrift", MARGIN_X + 276, 234),
+        ("unterschrift", "Unterschrift", MARGIN_X + 276, 205),
     ]
     for field_name, label, x, width in sig_fields:
         draw_label(c, x, sig_y, label)
