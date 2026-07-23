@@ -10,3 +10,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .context
+  # Privacy: keep photos with children's faces out of the published site.
+  - images_club/full/20260501-A7S00848.jpg
+  - images_club/full/20260501-A7S00851.jpg
+  - images_club/full/20260501-A7S00853.jpg
+  - images_club/thumbs/20260501-A7S00848.jpg
+  - images_club/thumbs/20260501-A7S00851.jpg
+  - images_club/thumbs/20260501-A7S00853.jpg
